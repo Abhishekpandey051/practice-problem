@@ -5,6 +5,7 @@ import TabForm from './project/tab-form/TabForm';
 import LikeButton from './project/like-button/LikeButton';
 import Trafic from './project/trafic-system/Trafic';
 import TodoList from './project/to-do list/TodoList';
+import Accordion from './project/accordian/Accordian';
 
 const SideBar = () => {
     const [activeComponent, setActiveComponent] = useState(0)
@@ -29,9 +30,12 @@ const SideBar = () => {
             name: 'To Do List',
             Component: TodoList,
         },
+        {
+            name: 'Accordian',
+            Component: Accordion,
+        },
     ]
     const ActiveComponent = sidebarMenu[activeComponent].Component;
-    console.log(activeComponent);
     
     return (
         <div>
