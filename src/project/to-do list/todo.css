@@ -82,3 +82,10 @@
 .todo-item .right button:hover {
   opacity: 0.85;
 }
+
+.text{
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: gray;
+}

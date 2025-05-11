@@ -24,3 +24,6 @@
     display: block;
     font-size: small;
   }
+  .head{
+    justify-items: center;
+  }

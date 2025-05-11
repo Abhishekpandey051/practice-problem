@@ -5,7 +5,6 @@ function TodoList() {
     const [inputText, setInputText] = useState("");
     const [addTodoList, setAddTodoList] = useState([]);
     const [editList, setEditList] = useState([])
-    // const [saveEditList, setSaveWditList] = useState()
 
     const handleAddTodoList = () => {
         if (inputText.trim() === '') return
@@ -32,15 +31,23 @@ function TodoList() {
     }
 
     const handleEditList = (id) => {
-        setEditList(addTodoList.filter(list => list.id === id))
+        const itemToEdit = addTodoList.find(list => list.id === id)
+        if (itemToEdit) {
+            setEditList([itemToEdit])
+        }
     }
-
-    const handleSaveList = () =>{
-
+    const handleInputChange = (e) => {
+        setEditList([{ ...editList[0], item: e.target.value }])
+    }
+    const handleSaveList = (id) => {
+        setAddTodoList(
+            addTodoList.map(add => add.id === id ? { ...add, item: editList[0].item } : add)
+        )
+        setEditList([])
     }
     console.log(editList);
 
-  
+
     return (
         <div>
             <div className="to-do-container">
@@ -60,12 +67,13 @@ function TodoList() {
                                         onChange={() => handleComplete(list.id)}
                                     />
                                     <span className={list.complete ? "completed" : ""}>{
-                                        list.id === editList[0]?.id ? <input value={editList[0]?.item}
-                                            /> : list.item}</span>
+                                        list.id === editList[0]?.id ? <input className="text" value={editList[0]?.item}
+                                            onChange={(e) => handleInputChange(e)} /> : list.item}</span>
                                 </div>
                                 <div className="right">
                                     <button onClick={() => handleDeletItem(list.id)}>Delete</button>
-                                    {list.id === editList[0]?.id ? <button onClick={() => handleSaveList(list.id)}>save</button> : <button onClick={() => handleEditList(list.id)}>Edit</button>}
+                                    {list.id === editList[0]?.id ? <button onClick={() => handleSaveList(list.id)}>save</button> :
+                                        <button onClick={() => handleEditList(list.id)}>Edit</button>}
                                 </div>
                             </li>
                         </ul>
