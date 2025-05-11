@@ -45,7 +45,7 @@ const SideBar = () => {
                 {
                     sidebarMenu.map((item, index) => 
                         <li key={index} className="menu-item">
-                            <div className='cursor' onClick={()=>setActiveComponent(index)}>{item.name}</div>
+                            <p className='cursor' onClick={()=>setActiveComponent(index)}>{item.name}</p>
                         </li>
                     )
                 }
