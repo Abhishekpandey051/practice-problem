@@ -1,0 +1,26 @@
+.header-container {
+    display: flex;
+  }
+  
+  .header {
+    padding: 8px;
+    border: solid 1px black;
+    cursor: pointer;
+  }
+  
+  .tab-info {
+    display: flex;
+    border: 1px solid black;
+    height: 300px;
+    padding: 5px;
+  }
+  .btn{
+    align-items: center;
+    padding: 5px;
+  }
+
+  .err{
+    color: red;
+    display: block;
+    font-size: small;
+  }

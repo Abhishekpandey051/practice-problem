@@ -1,0 +1,28 @@
+.container {
+  background: black;
+  border: 1px solid #000000;
+}
+
+.inners {
+  background: red;
+  width: 50px;
+  border-radius: 70px;
+  height: 50px;
+  margin: 10px;
+}
+
+.inners1 {
+  background: green;
+  width: 50px;
+  border-radius: 70px;
+  height: 50px;
+  margin: 10px;
+}
+
+.msg {
+  color: #fff;
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+}
+
